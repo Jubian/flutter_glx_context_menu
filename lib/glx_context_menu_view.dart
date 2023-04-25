@@ -37,7 +37,7 @@ class GlxContextMenuView extends GetView<GlxContextMenuController> {
       itemBuilder: (context, index) {
         return _buildItem(menuParam,index);
       },
-      itemCount: menuParam.itemCount,
+      itemCount: menuParam.items.length,
       padding: menuParam.padding ?? padding,
       width: menuParam.menuWidth ?? menuWidth,
       decoration: menuParam.decoration ?? decoration,
@@ -46,7 +46,7 @@ class GlxContextMenuView extends GetView<GlxContextMenuController> {
 
   /// 构建菜单项
   Widget _buildItem(GlxCtxMenuList menuParam,int index) {
-    final item = menuParam.itemBuilder(index);
+    final item = menuParam.items[index];
     if (item is GlxCtxMenuDivider) {
       // 分割线
       return GlxCtxMenuDividerView(

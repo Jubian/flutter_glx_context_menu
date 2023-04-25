@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 /// 菜单参数
 class GlxCtxMenuList {
   /// 构建菜单项
-  final GlxCtxMenuBuilder itemBuilder;
-  /// 菜单项数量
-  final int itemCount;
+  final List<GlxCtxMenuEntry> items;
   /// 列表key
   final key = GlobalKey();
   /// 列表宽度
@@ -27,8 +25,7 @@ class GlxCtxMenuList {
   var position = Offset.zero;
 
   GlxCtxMenuList({
-    required this.itemBuilder,
-    required this.itemCount,
+    required this.items,
     required this.level,
     required this.itemIndex,
     this.menuWidth,

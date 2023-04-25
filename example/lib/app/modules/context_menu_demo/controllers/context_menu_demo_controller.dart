@@ -12,7 +12,7 @@ class ContextMenuDemoController extends GetxController {
       menuList: GlxCtxMenuList(
         itemIndex: 0,
         level: 0,
-        itemBuilder: (index) {
+        items: List.generate(10, (index) {
           if (index == 1) {
             /// 子菜单
             return GlxCtxSubItemsMenuItem(
@@ -21,24 +21,25 @@ class ContextMenuDemoController extends GetxController {
                 itemIndex: index,
                 menuWidth: 200,
                 level: 1,
-                itemBuilder: (index) {
+                items: List.generate(5, (index) {
                   if (index == 2) {
                     return GlxCtxSubItemsMenuItem(
                       titleText: '2222 $index',
                       subMenuList: GlxCtxMenuList(
                         itemIndex: index,
                         level: 2,
-                        itemBuilder: (index) => GlxCtxTextMenuItem(titleText: 'titleTexttitleTexttitleTexttitleTexttitleText $index'),
-                        itemCount: 3
+                        items: List.generate(3, (index) {
+                          return GlxCtxTextMenuItem(titleText: 'titleTexttitleTexttitleTexttitleTexttitleText $index');
+                          })
                       )
                     );
                   }
                   return GlxCtxTextMenuItem(
                     titleText: 'titleTexttitleTexttitleTexttitleTexttitleText $index',
                   );
-                },
-                itemCount: 3
+                }
               )
+            )
             );
           } else {
             return GlxCtxTextMenuItem(
@@ -49,8 +50,7 @@ class ContextMenuDemoController extends GetxController {
               trailingText: 'trailingTexttrailingTexttrailingTexttrailingText $index'
             );
           }
-        },
-        itemCount: 10
+        })
       )
     );
   }
@@ -62,22 +62,23 @@ class ContextMenuDemoController extends GetxController {
       menuList: GlxCtxMenuList(
         itemIndex: 0,
         level: 0,
-        itemBuilder: (index) {
-          if (index == 0) {
+        items:List.generate(5, (index) {
+          if (index == 1) {
             /// 子菜单
             return GlxCtxSubItemsMenuItem(
               titleText: '1111 $index',
               subMenuList: GlxCtxMenuList(
                 itemIndex: index,
                 level: 1,
-                itemBuilder: (index) => GlxCtxTextMenuItem(titleText: 'titleTexttitleTexttitleTexttitleTexttitleText $index'),
-                itemCount: 3
+                items:List.generate(3, (index) {
+                  return GlxCtxTextMenuItem(titleText: 'titleTexttitleTexttitleTexttitleTexttitleText $index');
+                  })
               )
             );
           }
           return GlxCtxTextMenuItem(titleText: 'titleText $index');
-        },
-        itemCount: 5
+        }
+        )
       )
     );
   }

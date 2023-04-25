@@ -5,8 +5,6 @@ import 'package:flutter_glx_utils/widget_chain/widget_chain.dart';
 import 'package:get/get.dart';
 import 'glx_context_menu_list.dart';
 
-typedef GlxCtxMenuBuilder = GlxCtxMenuEntry Function(int index);
-
 typedef GlxCtxMenuTapCallback = void Function(int level, int index, dynamic data);
 
 /// menuItem 基类

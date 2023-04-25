@@ -110,8 +110,7 @@ class GlxContextMenuController extends GetxController {
 
     double menuHeight = 0;
 
-    for (int index = 0; index < menuList.itemCount; index++) {
-      final item = menuList.itemBuilder(index);
+    for (var item in menuList.items) {
       // 计算菜单高度
       menuHeight += item.height;
       // verticalMargin是菜单项的上下margin，所以要乘以2
